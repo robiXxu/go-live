@@ -10,9 +10,8 @@ import (
 
 func generateArgs(options FFmpegOptions) []string {
 	args := []string{
-		// "-y",
-		"-loop", fmt.Sprintf("%d", options.loopAmount),
-		// "-loop_input", "1",
+		"-stream_loop", fmt.Sprintf("%d", options.stream_loop),
+		"-loop", fmt.Sprintf("%d", options.image_loop),
 	}
 	for _, input := range options.inputs {
 		args = append(args, "-i", input)

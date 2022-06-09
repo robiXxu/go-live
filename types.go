@@ -5,10 +5,9 @@ type FFmpegConfiguration struct {
 }
 
 type FFmpegOptions struct {
+	stream_loop  int
 	inputs       []string
-	output       string
-	format       string
-	loopAmount   uint
+	image_loop   uint
 	preset       string
 	framerate    uint
 	sampleRate   uint
@@ -20,4 +19,6 @@ type FFmpegOptions struct {
 	videoBitrate uint
 	audioCodec   string
 	videoCodec   string
+	format       string
+	output       string
 }

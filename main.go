@@ -9,17 +9,18 @@ import (
 
 func exec(c *cli.Context) error {
 	startLive(FFmpegOptions{
+		stream_loop: -1,
 		// always mp3 second
 		inputs:       c.StringSlice("resource"),
 		framerate:    15,
 		gop:          30,
 		sampleRate:   44100,
 		threads:      1,
-		loopAmount:   1,
+		image_loop:   1,
 		preset:       "medium",
 		maxRate:      2500,
-		audioBitrate: 800,
-		videoBitrate: 200,
+		audioBitrate: 2500,
+		videoBitrate: 2500,
 		bufferSize:   512,
 		audioCodec:   "copy",
 		videoCodec:   "h264",
